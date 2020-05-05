@@ -19,7 +19,7 @@ public class docpayment {
 	 return con;
 	 }
 	
-	public String insertdocpayment(String Paymentcode, String DocID, String DocName, String PaymentType, String Amount, String DateOfPayed)
+	public String insertdocpayment(String code, String ID, String Name, String type,String amount,String dateofpayed)
 	{
 		String output = "";
 		try
@@ -32,18 +32,18 @@ public class docpayment {
 			}
 			
 			// create a prepared statement
-			String query = " insert into docpayment(`PaymentID`,`Paymentcode`,`DocID`,`DocName`,`PaymentType`,`Amount`,`DateOfPayed`) values (?, ?, ?, ?, ? ,? ,?)";
+			String query = " insert into docpayment(`PaymentID`,`Paymentcode`,`DocID`,`DocName`,`PaymentType`,`Amount`,`DateOfPayed`) values (?, ?, ?, ?, ?, ?, ?)";
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			
 			// binding values
 			preparedStmt.setInt(1, 0);
-			preparedStmt.setString(2, Paymentcode);
-			preparedStmt.setString(3, DocID);
-			preparedStmt.setString(4, DocName);
-			preparedStmt.setString(5, PaymentType);
-			preparedStmt.setFloat(6, Float.parseFloat(Amount));
-			preparedStmt.setString(7, DateOfPayed);
+			preparedStmt.setString(2, code);
+			preparedStmt.setString(3, ID);
+			preparedStmt.setString(4, Name);
+			preparedStmt.setString(5, type);
+			preparedStmt.setFloat(6, Float.parseFloat(amount));
+			preparedStmt.setString(7, dateofpayed);
 			
 			// execute the statement
 			preparedStmt.execute();
@@ -54,7 +54,7 @@ public class docpayment {
 		}
 		catch (Exception e)
 		{
-			output = "{\"status\":\"error\", \"data\": \"Error while inserting the Payment.\"}";
+			output = "{\"status\":\"error\", \"data\": \"Error while inserting the docpayment.\"}";
 			System.err.println(e.getMessage());
 		}
 		

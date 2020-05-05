@@ -41,7 +41,7 @@
 				<br>
 				
 				Date Of Payed :
-				<input id="DateOfPayed" name="DateOfPayed" type="text" class="form-control form-control-sm">
+				<input id="DateOfPayed" name="DateOfPayed" type="text"  class="form-control form-control-sm">
 				<br>
 				
 				<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">

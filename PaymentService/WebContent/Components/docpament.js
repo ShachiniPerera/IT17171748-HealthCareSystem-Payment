@@ -171,12 +171,27 @@ function validatedocpaymentForm()
 	// convert to decimal Amount
 	 $("#Amount").val(parseFloat(Amount).toFixed(2));
 	 
-	
 	// DateOfPayed------------------------
-	if ($("#DateOfPayed").val().trim() == "")
-	{
-		return "Insert DateOfPayed.";
-	}
+		if ($("#DateOfPayed").val().trim() == "")
+		{
+			return "Insert DateOfPayed.";
+			if ($("#DateOfPayed").valdate()){
+				return "! please Enter the Date in this Format 'YYYY/MM/DD";
+			}
+		}
 	
 	return true;
+}
+
+
+function valdate() {
+  var DateOfPayed = /^(19[0-9][0-9]|20[0-9][0-9])\/(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01])$/;
+  if (formdocpayment.DateOfPayed.value.match(DateOfPayed)) {
+    return true;
+  } else {
+    alert("! please Enter the Date in this Format 'YYYY/MM/DD'");
+    formdocpayment.DateOfPayed.value = "";
+    formdocpayment.DateOfPayed.focus();
+    return false;
+  }
 }
