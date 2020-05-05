@@ -41,8 +41,7 @@ public class docpaymentAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String output = docpaymentObj.insertdocpayment(
-										   request.getParameter("Paymentcode"),
+		String output = docpaymentObj.insertdocpayment(request.getParameter("Paymentcode"),
 										   request.getParameter("DocID"),
 										   request.getParameter("DocName"),
 										   request.getParameter("PaymentType"),
