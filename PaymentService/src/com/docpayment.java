@@ -72,7 +72,7 @@ public class docpayment {
 			
 			if (con == null)
 			{
-				return "Error while connecting to the database for reading sachii.";
+				return "Error while connecting to the database for reading .";
 			}
 			
 			// Prepare the html table to be displayed
