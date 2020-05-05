@@ -3,22 +3,21 @@ package com;
 import java.sql.*;
 
 public class docpayment {
+	
 	private Connection connect()
-	{
-		Connection con = null;
-		
-		try
-		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		return con;
-	}
+	 {
+	 Connection con = null;
+	 try
+	 {
+	 Class.forName("com.mysql.jdbc.Driver");
+	 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "");
+	 }
+	 catch (Exception e)
+	 {
+	 e.printStackTrace();
+	 }
+	 return con;
+	 }
 	
 	public String insertdocpayment(String Paymentcode, String DocID, String DocName, String PaymentType, String Amount, String DateOfPayed)
 	{
@@ -73,7 +72,7 @@ public class docpayment {
 			
 			if (con == null)
 			{
-				return "Error while connecting to the database for reading.";
+				return "Error while connecting to the database for reading sachii.";
 			}
 			
 			// Prepare the html table to be displayed
